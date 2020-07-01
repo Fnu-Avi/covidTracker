@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Cards, Chart, CountryPicker, Table } from './components';
+import { Cards, Chart, CountryPicker, Table, Maps } from './components';
 import styles from './App.module.css';
-import { fetchData, fetchDetailedData, fetchCountryData } from './api';
+import { fetchData, fetchDetailedData, fetchCountryData, fetchContinentData } from './api';
 
 import coronaImage from './images/iconCorona.png';
 
@@ -17,6 +17,7 @@ class App extends React.Component{
         data: {},
         detailedData: {},
         countryData: {},
+        continentData: {},
         country: '',
     }
 
@@ -24,13 +25,15 @@ class App extends React.Component{
         const fetchedData = await fetchData()
         const fetchedDetailedData = await fetchDetailedData()
         const fetchedCountryData = await fetchCountryData()
-        // console.log(fetchedDetailedData)
+        const fetchedContinentData = await fetchContinentData()
+        // console.log(fetchedContinentData)
         // console.log(fetchedCountryData)
 
         this.setState({
             data: fetchedData,
             detailedData: fetchedDetailedData,
             countryData: fetchedCountryData,
+            continentData: fetchedContinentData,
         })
     }
 
@@ -42,7 +45,7 @@ class App extends React.Component{
     }
 
     render(){
-        const { data, detailedData, countryData, country } = this.state;
+        const { data, detailedData, countryData, continentData, country } = this.state;
 
         return(
             <div>
@@ -88,6 +91,7 @@ class App extends React.Component{
                     <Typography className={styles.titleCOVIDTacker} variant="h2">C<img className={styles.image} src={coronaImage} alt="COVID-19" />VID Tracker </Typography>
                     <Divider className={styles.dividerTag}/>
                     <Cards data={data} detailedData={detailedData} />
+                    <Maps continentData={continentData} />
                     <Table countryData={countryData} />
                     <CountryPicker handleCountryChange={this.handleCountryChange} />
                     <Chart data={data} country={country} />

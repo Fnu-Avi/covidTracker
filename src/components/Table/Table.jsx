@@ -17,7 +17,7 @@ import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import styles from './Table.module.css';
 
 const Table = ({ countryData }) => {
-    console.log(countryData)
+    // console.log(countryData)
 
     if (!countryData.data) {
         return 'Loading...';
@@ -29,9 +29,9 @@ const Table = ({ countryData }) => {
 
     const header = [];
     let obj = Object.keys(array[0]);
-    console.log(obj)
+    // console.log(obj)
     obj.forEach(el => {
-        console.log(el)
+        // console.log(el)
         if(el != 'updated'){
         header.push(<TableCell className={styles.tableHead}>{el.toUpperCase()}</TableCell>)
         }

@@ -69,3 +69,13 @@ export const fetchCountryData = async () => {
         console.log(error);
     }
 }
+
+export const fetchContinentData = async () => {
+    try {
+        const { data } = await axios.get(`${detailedUrl}/continents`);
+
+        return { data }
+    } catch (error) {
+        console.log(error);
+    }
+}
