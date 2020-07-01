@@ -1,18 +1,14 @@
 import React from 'react';
-import { Card, CardContent, Typography, Grid } from '@material-ui/core';
-import CountUp from 'react-countup';
-import cx from 'classnames';
+import { Typography, Grid, Box, Container } from '@material-ui/core';
 
-import styles from './Map.module.css';
+import styles from './Radar.module.css';
 import { Radar } from 'react-chartjs-2';
-
-import Divider from '@material-ui/core/Divider';
 
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 
-const Maps = ({ continentData }) => {
+const Radars = ({ continentData }) => {
 
-    if(!continentData.data){
+    if (!continentData.data) {
         return 'Loading...';
     }
     console.log(continentData);
@@ -83,16 +79,32 @@ const Maps = ({ continentData }) => {
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgba(225,0,198,1)',
                 data: [continentData.data[0].critical, continentData.data[1].critical, continentData.data[2].critical, continentData.data[3].critical, continentData.data[4].critical, continentData.data[5].critical]
+            }, {
+                label: 'Tests',
+                backgroundColor: 'rgba(225,0,0,0.2)',
+                borderColor: 'rgba(225,0,0,1)',
+                pointBackgroundColor: 'rgba(225,0,0,1)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(225,0,0,1)',
+                data: [continentData.data[0].tests, continentData.data[1].tests, continentData.data[2].tests, continentData.data[3].tests, continentData.data[4].tests, continentData.data[5].tests]
             },
         ]
     };
 
     return (
         <div className={styles.container}>
-            <Radar data={bigData} />
-            {/* <Radar data={smallData} /> */}
+            <Typography className={styles.titleContinentStats}>Continent Wise Stats [Updated: {new Date(continentData.data[1].updated).toDateString()}]</Typography>
+            <Grid container>
+                <Grid item xs={6} className={styles.gridStyling}>
+                    <Radar data={bigData} />
+                </Grid>
+                <Grid item xs={6} className={styles.gridStyling}>
+                    <Radar data={smallData} />
+                </Grid>
+            </Grid>
         </div>
     )
 }
 
-export default Maps;
+export default Radars;

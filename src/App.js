@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Cards, Chart, CountryPicker, Table, Maps } from './components';
+import { Cards, Chart, CountryPicker, Table, Radars } from './components';
 import styles from './App.module.css';
 import { fetchData, fetchDetailedData, fetchCountryData, fetchContinentData } from './api';
 
@@ -91,7 +91,7 @@ class App extends React.Component{
                     <Typography className={styles.titleCOVIDTacker} variant="h2">C<img className={styles.image} src={coronaImage} alt="COVID-19" />VID Tracker </Typography>
                     <Divider className={styles.dividerTag}/>
                     <Cards data={data} detailedData={detailedData} />
-                    <Maps continentData={continentData} />
+                    <Radars continentData={continentData} />
                     <Table countryData={countryData} />
                     <CountryPicker handleCountryChange={this.handleCountryChange} />
                     <Chart data={data} country={country} />

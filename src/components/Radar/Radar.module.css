@@ -1,0 +1,17 @@
+.container{
+    height: 100%;
+    width: 100%;
+    pointer-events: all;
+    margin-left: 2%;
+}
+
+.titleContinentStats{
+    margin-left: 1% !important;
+}
+
+.gridStyling{
+    background-color: white;
+    /* border: solid; */
+    background-clip: content-box;
+    padding: 1%;
+}

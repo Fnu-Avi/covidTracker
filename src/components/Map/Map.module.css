@@ -1,8 +1,0 @@
-.container {
-    margin: 50px 30px;
-    flex-wrap: nowrap !important;
-    pointer-events: all;
-    align-self: center;
-    width: calc(70% - 50px);
-    background-color: white;
-}
