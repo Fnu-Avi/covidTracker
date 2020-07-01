@@ -1,0 +1,17 @@
+.container{
+    margin: 50px 0;
+    flex-wrap: nowrap !important;
+    pointer-events: all;
+    width: calc(100% - 50px);
+    align-items: center !important;
+}
+
+.tableHead{
+    font-weight: bold !important;
+}
+
+.titleUSStateStats{
+    font-family: cursive;
+    text-align: center;
+    font-size: large;
+}

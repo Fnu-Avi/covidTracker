@@ -1,0 +1,6 @@
+.formControl {
+    width: 30%;
+    margin-bottom: 30px !important;
+    pointer-events: all;
+    background-color: white;
+}

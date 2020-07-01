@@ -1,0 +1,57 @@
+.container{
+    margin: 50px 30px;
+    flex-wrap: nowrap !important;
+    pointer-events: all;
+    align-self: flex-start;
+    width: calc(70% - 50px);
+}
+
+.titleCards{
+    margin: 0px 7px !important;
+}
+
+.dividerTag{
+    height: 70% !important;
+    background-color: #990000 !important;
+}
+
+.card{
+    margin: 0 2% !important;
+}
+
+.cardsSpacing{
+    margin: 4% 0 !important;
+}
+
+.infected{
+    border-bottom: 10px solid rgba(0, 0, 255, 0.5);
+}
+.recovered{
+    border-bottom: 10px solid rgba(0, 255, 0, 0.5);
+}
+.deaths{
+    border-bottom: 10px solid rgba(255, 0, 0, 0.5);
+}
+.today{
+    border-bottom: 10px solid rgba(82, 82, 143, 0.5);
+}
+
+.affected{
+    border-bottom: 10px solid rgba(0, 0, 255, 1);
+}
+.tests{
+    border-bottom: 10px solid rgba(0, 255, 0, 1);
+}
+.critical{
+    border-bottom: 10px solid rgba(255, 0, 0, 1);
+}
+.otherStats{
+    border-bottom: 10px solid rgba(82, 82, 143, 1);
+}
+
+
+@media (max-width: 770px) {
+    .card{
+        margin: 2% 0 !important;
+    }
+}
